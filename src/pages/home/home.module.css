@@ -1,13 +1,16 @@
-.homeWrapper {}
-
+.homeWrapper {
+}
 .homeWrapper h2 {
     text-align: right;
     margin: 60px;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .articles {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    direction: rtl;
+
 }

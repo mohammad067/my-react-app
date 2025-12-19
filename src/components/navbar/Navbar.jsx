@@ -7,6 +7,7 @@ function Navbar() {
 
     //html
     return (
+        
         <div className={styled.headerWrapper}>
             <div className="container">
 

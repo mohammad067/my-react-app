@@ -1,9 +1,9 @@
-
+import styled from "./footer.module.css"
 
 function Footer() {
     return (
-      <div>
-        <h3>ddddd</h3>
+      <div className={styled.footer}>
+        <h3>فوتر</h3>
       </div>
     );
   }
