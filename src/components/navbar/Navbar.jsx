@@ -1,6 +1,7 @@
 import styled from "./navbar.module.css"
+import { Link } from "react-router-dom"
 
-function Navbar() {
+function Navbar(props) {
     //js
     let title = "کریپتوباز"
 
@@ -14,9 +15,14 @@ function Navbar() {
                 <div className={styled.header}>
                     <h3>{title}</h3>
                     <ul>
-                        <li>لیست مقالات </li>
+                        <li>
+                           <Link to="/"> لیست مقالات </Link>
+                            
+                             </li>
                         <li>ساخت مقاله</li>
-                        <li>درباره ما</li>
+                        <li>
+                            <Link to="/about">درباره ما</Link>
+                            </li>
                     </ul>
                 </div>
             </div>
