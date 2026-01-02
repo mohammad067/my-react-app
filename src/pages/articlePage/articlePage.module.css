@@ -1,0 +1,49 @@
+.articleWrapper {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    font-family: "Vazir", sans-serif;
+}
+
+.articleWrapper h1 {
+    text-align: right;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin-right: 30px;
+}
+
+.articleWrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 0.5rem;
+}
+
+.articleWrapper p {
+
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4a4a4a;
+    line-height: 1.8em !important;
+    text-align: right !important;
+    word-spacing: 2px !important;
+    margin-bottom: 30px;
+
+}
+
+.articleInfo {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 30px;
+    flex-direction: row-reverse;
+    margin-right: 50px;
+}
+
+.articleInfo span {
+    font-size: 17px;
+    margin-left: 10px;
+    color: #777;
+}

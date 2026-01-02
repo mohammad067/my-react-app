@@ -2,3 +2,5 @@ git add .
 git commit -m "update"
 git push
 
+npx json-server --watch data/db.json --port 8000
+

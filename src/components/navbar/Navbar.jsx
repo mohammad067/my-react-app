@@ -13,7 +13,7 @@ function Navbar(props) {
             <div className="container">
 
                 <div className={styled.header}>
-                    <h3>{title}</h3>
+                    <h3><Link to="/">{title}</Link></h3>
                     <ul>
                         <li>
                            <Link to="/"> لیست مقالات </Link>

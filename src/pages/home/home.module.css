@@ -1,4 +1,5 @@
 .homeWrapper {
+
 }
 .homeWrapper h2 {
     text-align: right;
@@ -13,4 +14,8 @@
     flex-wrap: wrap;
     direction: rtl;
 
+}
+
+.articles a{
+    width: 23%;
 }
