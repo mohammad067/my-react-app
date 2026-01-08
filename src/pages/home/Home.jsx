@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Home() {
 
 
-    const [/*state*/articles,/*setState*/setArticles] = useState([])
+    const [/*state// اسم متغییر*/articles,/*setState // حالت اکشن*/setArticles] = useState([])
     //استیت وقتی تغییر میکنه ری رندر میشه و اتفاق میفته اما نتغییر در ریکت نمیفهمه
 
     useEffect(() => {
@@ -34,7 +34,7 @@ function Home() {
                 <h2>مقالات جدید</h2>
                 <div className={styled.articles}>
                     {articles.map((article) => (//مپ  یه حلقه میزنه  و مقدار رو ریترن میکنه
-                            <Link to={`/article/ ${article.id}`}>
+                            <Link to={`/article/${article.id}`}>
 
                                 <Article key={article.id} article={article} />
 

@@ -1,50 +1,54 @@
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
-import styled from "./articlePage.module.css"
-import pic from "./../../assets/images/ethereum.webp"
+import styled from "./articlePage.module.css";
 import { useParams } from "react-router-dom";
+import { useEffect ,useState} from "react";
+import axios from "axios";
+
 
 function ArticlePage() {
-    const params = useParams()
-    console.log(params.id);
-    return (
+  const params = useParams();/* برای گرفتن لینک صفحه ها */
+  
 
-        <div>
-            <Navbar title="کریپتوباز" />
-            <div className={styled.articleWrapper}>
-                <div className="container">
-                    <h1> اتریوم به آستانه انفجار قیمتی رسید؛ بازار در وضعیت بحرانی </h1>
-                    <div className={styled.articleInfo}>
-                        <span>1404/10/09 :تاریخ</span>
-                        <span>نویسنده: محمد مهدی رضائی </span>
-                        <span>مدت زمان خواندن : 8دقیقه</span>
-                    </div>
+  const [/*stats//اسم متغییر*/article,/*setState // حالت اکشن*/ setArticle] = useState([null]);
 
+  useEffect(() => {
+    //تو استیرینگ میخوای جاوااسکریپت بنویسی میای از بک تیک و دلار و بریس استفاده میکنی
+    axios
+    .get(`http://localhost:8000/articles/${params.id}`)
+    .then((result) => {
+      setArticle(result.data);;
+    })
+    .catch((error)=>{
+      console.log(error);
+      
+    });
+    
+  }, [params.id]);
+ if (!article) return <div>در حال بارگذاری...</div>;
 
-                    <img src={pic} alt="اتریوم" />
+  return (
+    <div>
+      <Navbar title="کریپتوباز" />
+      <div className={styled.articleWrapper}>
+        <div className="container">
+          <h1> {article.title} </h1>
+          <div className={styled.articleInfo}>
+            <span>  تاریخ: {article.date} </span>
+            <span>نویسنده: {article.athor}  </span>
+            <span>مدت زمان خواندن : {article.readingTime} دقیقه</span>
+          </div>
 
-                    <p>
+          <img src={article.imageUrl} alt="اتریوم" />
 
-                        با نزدیک‌شدن قیمت اتریوم به رأس یک الگوی مثلثی فشرده، تحلیل‌گران به دقت تحرکات بازار را زیر نظر دارند. نوسانات به‌طور محسوسی کاهش یافته‌اند و به‌نظر می‌رسد بازار آماده یک شکست قیمتی (Breakout) باشد؛ اما سؤال اینجاست که مسیر بعدی اتریوم صعودی خواهد بود یا نزولی؟
-
-                        جمع‌شدن فنر قیمتی در یک ساختار متراکم
-                        در هفته‌های اخیر، اتریوم درون یک مثلث متقارن گرفتار شده است؛ ساختاری که به‌خوبی معرف بلاتکلیفی بازار است. در این وضعیت، کف‌های بالارونده و سقف‌های پایین‌رونده به‌تدریج قیمت را به یک نقطه تلاقی سوق داده‌اند. برخلاف تصور رایج، این نوع فشردگی الزاماً نشانه ضعف یا قدرت نیست، بلکه حاکی از عدم قطعیت جمعی بین خریداران و فروشندگان است. در زمان نگارش این خبر قیمت اتریوم حوالی 3,026 دلار است. این مرحله معمولاً پیش‌درآمدی بر یک حرکت ناگهانی و پرقدرت است؛ حرکتی که می‌تواند جهت بازار را برای هفته‌ها تغییر دهد.
-
-                        نقطه تعادل قیمت در چه جایگاهی قرار دارد؟
-                        یکی از مهم‌ترین نکات تکنیکالی در ساختار فعلی بازار اتریوم، قرارگیری قیمت در حوالی نقطه کنترل (Point of Control یا POC) است. این نقطه همان سطحی است که در بازه‌ی اخیر، بیشترین حجم معاملات در آن انجام شده و معمولاً به‌عنوان مرکز تعادل میان عرضه و تقاضا شناخته می‌شود. زمانی که قیمت به‌صورت مکرر در اطراف این نقطه نوسان می‌کند، نشانه‌ای از تعادل نسبی میان خریداران و فروشندگان است. با این حال، ادامه‌ی فشردگی در این ناحیه اغلب به یک حرکت شدید قیمتی منجر می‌شود؛ چه به سمت بالا، چه به سمت پایین.
-
-
-                    </p>
-
-                </div>
-            </div>
-
-
-            <Footer />
+          <p>
+           {article.content}
+          </p>
         </div>
+      </div>
 
-
-    )
-
+      <Footer />
+    </div>
+  );
 }
 export default ArticlePage;

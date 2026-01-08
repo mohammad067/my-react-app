@@ -1,6 +1,6 @@
 
 import AboutUs from "./pages/aboutUs/AboutUs";
-import ArticlePage from "./pages/articlePage/ArticlePage";
+import ArticlePage from "./pages/ArticlePage/ArticlePage";
 import Home from "./pages/home/Home";
 import { Route,Routes } from "react-router-dom";//هر روتی (صفحه)ایی که اضافه کنیم به روترز ریخته میشه
 
