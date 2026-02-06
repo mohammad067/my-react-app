@@ -1,0 +1,29 @@
+.container{
+
+}
+.container ,h1{
+  text-align: right;
+}
+
+.inputWrapper{
+margin-bottom: 20px;
+}
+
+.inputWrapper label{
+  display: block;
+  margin-bottom: 5px;
+  text-align: right;
+
+}
+
+
+
+.inputWrapper input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+  direction: rtl;
+
+}

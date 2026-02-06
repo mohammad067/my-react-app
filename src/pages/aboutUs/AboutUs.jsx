@@ -4,7 +4,7 @@ import styled from "./aboutUs.module.css";
 import image from "../../assets/images/saman-logo.png";
 function AboutUs() {
   return (
-    <div>
+    <>
       <Navbar title="کریپتوباز" />
       <div className={styled.aboutPage}>
         <div className="container">
@@ -18,7 +18,7 @@ function AboutUs() {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 export default AboutUs;
